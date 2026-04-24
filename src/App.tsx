@@ -613,7 +613,7 @@ export default function App() {
                 </li>
                 <li className="flex gap-3">
                   <MapPin size={18} className="text-teal-500 shrink-0" />
-                  <span>123 Security Blvd, Suite 404<br />Cyberport, CP 94043</span>
+                  <span> Pilani Campus, Vidya Vihar, Pilani.<br />  Pin - 333031. Rajasthan, India</span>
                 </li>
               </ul>
             </div>
