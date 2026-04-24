@@ -591,7 +591,7 @@ export default function App() {
 
       <footer id="contact" className="bg-black/40 border-t border-white/10 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
                 <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
@@ -605,21 +605,11 @@ export default function App() {
             </div>
 
             <div className="space-y-6">
-              <h4 className="font-bold text-teal-400 px-4">Quick Links</h4>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors px-4 py-1 block">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors px-4 py-1 block">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors px-4 py-1 block">API Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors px-4 py-1 block">Security Whitepaper</a></li>
-              </ul>
-            </div>
-
-            <div className="space-y-6">
               <h4 className="font-bold text-teal-400">Contact Us</h4>
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex gap-3">
                   <Mail size={18} className="text-teal-500 shrink-0" />
-                  <span>support@secureox.ai</span>
+                  <span>support@secureox.com</span>
                 </li>
                 <li className="flex gap-3">
                   <MapPin size={18} className="text-teal-500 shrink-0" />
@@ -633,12 +623,9 @@ export default function App() {
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex items-center gap-3">
                    <div className="w-6 h-4 bg-blue-600 rounded-sm" /> 
-                   <span>USA - Silicon Valley</span>
+                   <span>India- BITS PILANI</span>
                 </li>
-                <li className="flex items-center gap-3">
-                   <div className="w-6 h-4 bg-orange-500 rounded-sm" /> 
-                   <span>India - Hyderabad</span>
-                </li>
+                
                 <li className="pt-4 flex gap-4">
                   <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"><Github size={20} /></a>
                   <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"><Globe size={20} /></a>
