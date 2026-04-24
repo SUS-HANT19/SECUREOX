@@ -108,7 +108,12 @@ const EncryptionTool = () => {
         {/* Tabs */}
         <div className="flex border-b border-white/10">
           <button 
-            onClick={() => { setActiveTab('encrypt'); setResult(''); }}
+            onClick={() => { 
+             setActiveTab('encrypt'); 
+             setResult('');
+             setInputText('');
+             setPassphrase('');
+            }}
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
               activeTab === 'encrypt' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
@@ -118,7 +123,12 @@ const EncryptionTool = () => {
             {activeTab === 'encrypt' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-400" />}
           </button>
           <button 
-            onClick={() => { setActiveTab('decrypt'); setResult(''); }}
+         onClick={() => { 
+             setActiveTab('decrypt'); 
+             setResult('');
+             setInputText('');
+             setPassphrase('');
+             }}
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
               activeTab === 'decrypt' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
