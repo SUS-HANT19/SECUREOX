@@ -269,7 +269,7 @@ export default function App() {
             >
               {/* Header Section */}
               <section className="pt-48 pb-20 px-4">
-                <div className="max-w-7xl mx-auto text-center space-y-10">
+               <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between relative">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
