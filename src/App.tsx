@@ -253,9 +253,7 @@ export default function App() {
             <a href="#features" onClick={(e) => { if (view !== 'landing') { e.preventDefault(); setView('landing'); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); } }} className="hover:text-teal-400 transition-colors">Features</a>
             <a href="#contact" className="hover:text-teal-400 transition-colors">Support</a>
           </div>
-          <button className="cyber-button text-sm px-4 py-1.5" onClick={() => setView('tools')}>
-            Start Encrypting <ArrowRight size={14} />
-          </button>
+          
         </div>
       </nav>
 
