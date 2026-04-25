@@ -269,7 +269,7 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Hero Section */}
+              {/* Header Section */}
               <section className="pt-48 pb-20 px-4">
                 <div className="max-w-7xl mx-auto text-center space-y-10">
                   <motion.div
