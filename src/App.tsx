@@ -601,6 +601,7 @@ export default function App() {
                   <ChevronRight size={16} className="rotate-180" /> Back to Home
                 </button>
                 <EncryptionTool />
+                <StegoTool />
             
               </div>
             </motion.div>
