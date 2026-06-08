@@ -76,9 +76,17 @@ const EncryptionTool = () => {
     setResult('');
     if (!inputText || !passphrase) return;
     
-    const res = activeTab === 'encrypt' 
-      ? encryptText(inputText, passphrase) 
-      : decryptText(inputText, passphrase);
+    const start = performance.now();
+
+const res = activeTab === 'encrypt'
+  ? encryptText(inputText, passphrase)
+  : decryptText(inputText, passphrase);
+
+const end = performance.now();
+console.log(
+  `${activeTab} operation took ${(end - start).toFixed(2)} ms`
+);
+    
     
     if (res.error) {
       setError(res.error);
@@ -250,7 +258,13 @@ const StegoTool = () => {
       const img = new Image();
       img.src = image;
       img.onload = () => {
-        const result = embedMessage(img, message);
+
+        const start = performance.now();
+const result = embedMessage(img, message);
+const end = performance.now();
+console.log(`Embedding took ${(end - start).toFixed(2)} ms`);
+
+        
         setResultImage(result);
         setLoading(false);
       };
@@ -267,7 +281,12 @@ const StegoTool = () => {
       const img = new Image();
       img.src = image;
       img.onload = () => {
-        const result = extractMessage(img);
+
+        const start = performance.now();
+const result = extractMessage(img);
+const end = performance.now();
+console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
+
         setExtractedMsg(result || 'No hidden message found.');
         setLoading(false);
       };
