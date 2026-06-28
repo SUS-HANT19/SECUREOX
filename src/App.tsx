@@ -450,6 +450,99 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
   );
 };
 
+
+const AudioTool = () => {
+  const [file, setFile] = useState<File | null>(null);
+  const [password, setPassword] = useState('');
+  const [mode, setMode] = useState<'encrypt' | 'decrypt'>('encrypt');
+
+  const handleProcess = async () => {
+    if (!file || !password) return;
+
+    try {
+      let blob: Blob;
+
+      if (mode === 'encrypt') {
+        blob = await encryptAudio(file, password);
+      } else {
+        blob = await decryptAudio(file, password);
+      }
+
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+
+      a.href = url;
+
+      a.download =
+        mode === 'encrypt'
+          ? `${file.name}.enc`
+          : `decrypted_${file.name}`;
+
+      a.click();
+
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('Operation failed');
+    }
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto mt-32">
+      <h2 className="font-display font-bold text-3xl mb-8">
+        Audio Encryption
+      </h2>
+
+      <div className="cyber-card p-8 space-y-6">
+
+        <div className="flex gap-4">
+          <button
+            onClick={() => setMode('encrypt')}
+            className="cyber-button"
+          >
+            Encrypt
+          </button>
+
+          <button
+            onClick={() => setMode('decrypt')}
+            className="cyber-button"
+          >
+            Decrypt
+          </button>
+        </div>
+
+        <input
+          type="file"
+          accept=".mp3,.wav,.m4a,.enc"
+          onChange={(e) =>
+            setFile(e.target.files?.[0] || null)
+          }
+        />
+
+        <input
+          type="password"
+          value={password}
+          onChange={(e) =>
+            setPassword(e.target.value)
+          }
+          placeholder="Password"
+          className="w-full bg-white/5 border border-white/10 rounded-xl p-4"
+        />
+
+        <button
+          onClick={handleProcess}
+          className="w-full py-4 bg-teal-500 rounded-xl"
+        >
+          {mode === 'encrypt'
+            ? 'Encrypt Audio'
+            : 'Decrypt Audio'}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+
 export default function App() {
   const [view, setView] = useState<'landing' | 'tools'>('landing');
 
@@ -621,6 +714,7 @@ export default function App() {
                 </button>
                 <EncryptionTool />
                 <StegoTool />
+                <AudioTool />
             
               </div>
             </motion.div>
