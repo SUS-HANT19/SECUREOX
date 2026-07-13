@@ -20,7 +20,7 @@ import {
   Globe
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { encryptText, decryptText, embedMessage, extractMessage, encryptAudio, decryptAudio } from './lib/security';
+import { encryptText, decryptText, embedMessage, extractMessage } from './lib/security';
 import { cn } from './lib/utils';
 
 // --- Components ---
