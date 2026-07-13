@@ -451,92 +451,124 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
 };
 
 
-const AudioTool = () => {
+const FileIntegrityTool = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [password, setPassword] = useState('');
-  const [mode, setMode] = useState<'encrypt' | 'decrypt'>('encrypt');
+  const [hash, setHash] = useState('');
+  const [expectedHash, setExpectedHash] = useState('');
+  const [status, setStatus] = useState('');
 
-  const handleProcess = async () => {
-    if (!file || !password) return;
+  const generateHash = async () => {
+    if (!file) return;
 
-    try {
-      let blob: Blob;
+    const buffer = await file.arrayBuffer();
 
-      if (mode === 'encrypt') {
-        blob = await encryptAudio(file, password);
-      } else {
-        blob = await decryptAudio(file, password);
-      }
+    const hashBuffer = await crypto.subtle.digest(
+      'SHA-256',
+      buffer
+    );
 
-      const url = URL.createObjectURL(blob);
+    const hashArray = Array.from(
+      new Uint8Array(hashBuffer)
+    );
 
-      const a = document.createElement('a');
+    const hashHex = hashArray
+      .map(byte => byte.toString(16).padStart(2, '0'))
+      .join('');
 
-      a.href = url;
+    setHash(hashHex);
+    setStatus('');
+  };
 
-      a.download =
-        mode === 'encrypt'
-          ? `${file.name}.enc`
-          : `decrypted_${file.name}`;
+  const verifyHash = () => {
+    if (!hash || !expectedHash) return;
 
-      a.click();
-
-      URL.revokeObjectURL(url);
-    } catch (err) {
-      alert('Operation failed');
+    if (
+      hash.toLowerCase() ===
+      expectedHash.trim().toLowerCase()
+    ) {
+      setStatus('MATCH');
+    } else {
+      setStatus('MISMATCH');
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto mt-32">
-      <h2 className="font-display font-bold text-3xl mb-8">
-        Audio Encryption
-      </h2>
+      <div className="text-center mb-10">
+        <h2 className="font-display font-bold text-3xl md:text-4xl mb-4">
+          File Integrity Checker
+        </h2>
+
+        <p className="text-gray-400">
+          Generate and verify SHA-256 file fingerprints.
+        </p>
+      </div>
 
       <div className="cyber-card p-8 space-y-6">
 
-        <div className="flex gap-4">
-          <button
-            onClick={() => setMode('encrypt')}
-            className="cyber-button"
-          >
-            Encrypt
-          </button>
-
-          <button
-            onClick={() => setMode('decrypt')}
-            className="cyber-button"
-          >
-            Decrypt
-          </button>
-        </div>
-
         <input
           type="file"
-          accept=".mp3,.wav,.m4a,.enc"
-          onChange={(e) =>
-            setFile(e.target.files?.[0] || null)
-          }
-        />
-
-        <input
-          type="password"
-          value={password}
-          onChange={(e) =>
-            setPassword(e.target.value)
-          }
-          placeholder="Password"
+          onChange={(e) => {
+            setFile(e.target.files?.[0] || null);
+            setHash('');
+            setStatus('');
+          }}
           className="w-full bg-white/5 border border-white/10 rounded-xl p-4"
         />
 
         <button
-          onClick={handleProcess}
-          className="w-full py-4 bg-teal-500 rounded-xl"
+          onClick={generateHash}
+          disabled={!file}
+          className="w-full py-4 bg-teal-500 hover:bg-teal-400 disabled:opacity-50 rounded-xl font-bold"
         >
-          {mode === 'encrypt'
-            ? 'Encrypt Audio'
-            : 'Decrypt Audio'}
+          Generate SHA-256 Hash
         </button>
+
+        {hash && (
+          <>
+            <div>
+              <label className="text-sm text-gray-400">
+                Generated SHA-256
+              </label>
+
+              <div className="mt-2 bg-white/5 border border-white/10 rounded-xl p-4 font-mono text-sm break-all">
+                {hash}
+              </div>
+            </div>
+
+            <input
+              type="text"
+              value={expectedHash}
+              onChange={(e) =>
+                setExpectedHash(e.target.value)
+              }
+              placeholder="Paste the expected SHA-256 hash..."
+              className="w-full bg-white/5 border border-white/10 rounded-xl p-4"
+            />
+
+            <button
+              onClick={verifyHash}
+              disabled={!expectedHash}
+              className="w-full py-4 bg-white/10 hover:bg-white/20 rounded-xl font-bold"
+            >
+              Verify File Integrity
+            </button>
+
+            {status && (
+              <div
+                className={`p-4 rounded-xl text-center font-bold ${
+                  status === 'MATCH'
+                    ? 'bg-emerald-500/10 text-emerald-400'
+                    : 'bg-red-500/10 text-red-400'
+                }`}
+              >
+                {status === 'MATCH'
+                  ? '✓ File is unchanged — hashes match'
+                  : '✗ File may have been modified — hashes do not match'}
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
@@ -714,8 +746,8 @@ export default function App() {
                 </button>
                 <EncryptionTool />
                 <StegoTool />
-                <AudioTool />
-            
+                <FileIntegrityTool />    
+                
               </div>
             </motion.div>
           )}
