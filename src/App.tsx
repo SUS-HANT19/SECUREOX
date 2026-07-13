@@ -511,6 +511,7 @@ const FileIntegrityTool = () => {
           onChange={(e) => {
             setFile(e.target.files?.[0] || null);
             setHash('');
+            setExpectedHash('');
             setStatus('');
           }}
           className="w-full bg-white/5 border border-white/10 rounded-xl p-4"
