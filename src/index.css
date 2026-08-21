@@ -11,21 +11,39 @@
 }
 
 body {
-  @apply bg-[#082f49] text-gray-100 font-sans;
-  background: radial-gradient(circle at top, #0f766e 0%, #082f49 100%);
+  @apply text-gray-100 font-sans;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(124, 92, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(34, 211, 238, 0.12), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(139, 92, 246, 0.10), transparent 30%),
+    #070B17;
   min-height: 100vh;
 }
-
 .cyber-card {
-  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300;
+  @apply backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300;
+  background: rgba(17, 24, 45, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.cyber-card:hover {
+  border-color: rgba(124, 92, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
+}
 .cyber-button {
-  @apply px-6 py-2 bg-teal-500 hover:bg-teal-400 text-white font-medium rounded-lg transition-all active:scale-95 flex items-center gap-2;
+  @apply px-6 py-2 text-white font-medium rounded-lg transition-all active:scale-95 flex items-center gap-2;
+  background: linear-gradient(135deg, #7C5CFF, #5B4BDB);
+  box-shadow: 0 8px 30px rgba(124, 92, 255, 0.25);
+}
+
+.cyber-button:hover {
+  background: linear-gradient(135deg, #8B73FF, #6C5CE7);
+  box-shadow: 0 10px 35px rgba(124, 92, 255, 0.35);
+  transform: translateY(-2px);
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-emerald-400;
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(90deg, #9B87FF, #22D3EE);
 }
 
 /* Custom scrollbar for high-tech look */
@@ -33,12 +51,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #082f49;
+  background: #070B17;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #115e59;
+  background: #4C3AA8;
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #0d9488;
+  background: #7C5CFF;
 }
