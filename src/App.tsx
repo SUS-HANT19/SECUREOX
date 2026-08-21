@@ -359,8 +359,8 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
                 </div>
               ) : (
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-[#22D3EE]/10 rounded-full flex items-center justify-center mx-auto">
-                    <CloudUpload className="text-[#22D3EE]" size={32} />
+                  <div className="w-16 h-16 bg-[#7C5CFF]/10 rounded-full flex items-center justify-center mx-auto">
+                   <CloudUpload className="text-[#9B87FF]" size={32} />
                   </div>
                   <div className="space-y-1">
                     <p className="font-bold">Click to upload an image</p>
@@ -435,7 +435,7 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
           )}
 
           <div className="pt-6 border-t border-white/10 space-y-4">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-[#22D3EE]">How It Works:</h4>
+             <h4 className="text-xs font-bold uppercase tracking-widest text-[#9B87FF]">How It Works:</h4>
              <ul className="text-xs text-gray-500 space-y-2 list-disc pl-4">
                 <li>Text is hidden in the least significant bits of image pixels</li>
                 <li>Changes are imperceptible to the human eye</li>
@@ -712,21 +712,32 @@ export default function App() {
                     />
                   </div>
 
-                  {/* Guarantees Box */}
-                  <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="cyber-card p-6 flex flex-col gap-2">
-                      <h4 className="font-bold flex items-center gap-2 text-[#22D3EE]"><Check size={20} /> Security Guarantees</h4>
-                      <ul className="text-sm text-gray-400 space-y-2 pl-7">
-                        <li>End-to-end encryption for all operations</li>
-                        <li>GDPR and SOC-2 compliant infrastructure</li>
-                      </ul>
-                    </div>
-                     <div className="cyber-card p-6 flex flex-col gap-2 justify-center">
-                       <ul className="text-sm text-gray-400 space-y-2 pl-7">
-                        <li>Regular security audits and updates</li>
-                      </ul>
-                    </div>
-                  </div>
+                 {/* Security Guarantees */}
+<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="cyber-card p-6 flex flex-col gap-3">
+    <h4 className="font-bold flex items-center gap-2 text-[#9B87FF]">
+      <Check size={20} />
+      Security Guarantees
+    </h4>
+
+    <ul className="text-sm text-gray-400 space-y-2 pl-7 list-disc">
+      <li>End-to-end encryption for all operations</li>
+      <li>GDPR and SOC-2 compliant infrastructure</li>
+    </ul>
+  </div>
+
+  <div className="cyber-card p-6 flex flex-col gap-3">
+    <h4 className="font-bold flex items-center gap-2 text-[#9B87FF]">
+      <Shield size={20} />
+      Continuous Protection
+    </h4>
+
+    <ul className="text-sm text-gray-400 space-y-2 pl-7 list-disc">
+      <li>Regular security audits and updates</li>
+      <li>Security-focused improvements as threats evolve</li>
+    </ul>
+  </div>
+</div>
                 </div>
               </section>
             </motion.div>
