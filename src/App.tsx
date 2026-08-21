@@ -741,7 +741,7 @@ export default function App() {
               <div className="max-w-7xl mx-auto">
                 <button 
                   onClick={() => setView('landing')}
-                  className="mb-8 flex items-center gap-2 text-sm text-gray-400 hover:text-teal-400 transition-colors"
+                  className="mb-8 flex items-center gap-2 text-sm text-gray-400 hover:text-[#9B87FF] transition-colors"
                 >
                   <ChevronRight size={16} className="rotate-180" /> Back to Home
                 </button>
@@ -755,7 +755,7 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      <footer id="contact" className="bg-black/40 border-t border-white/10 pt-20 pb-10">
+      <footer id="contact" className="bg-[#050812]/70 border-t border-white/10 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="space-y-6">
@@ -771,21 +771,21 @@ export default function App() {
             </div>
 
             <div className="space-y-6">
-              <h4 className="font-bold text-teal-400">Contact Us</h4>
+              <h4 className="font-bold text-[#22D3EE]">Contact Us</h4>
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex gap-3">
-                  <Mail size={18} className="text-teal-500 shrink-0" />
+                  <Mail size={18} className="text-[#22D3EE] shrink-0" />
                   <span>support@secureox.com</span>
                 </li>
                 <li className="flex gap-3">
-                  <MapPin size={18} className="text-teal-500 shrink-0" />
+                  <MapPin size={18} className="text-[#22D3EE] shrink-0" />
                   <span> Pilani Campus, Vidya Vihar, Pilani.<br />  Pin - 333031. Rajasthan, India</span>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-6">
-              <h4 className="font-bold text-teal-400">Location</h4>
+              <h4 className="font-bold text-[#22D3EE]">Location</h4>
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex items-center gap-3">
                    <div className="w-6 h-4 bg-blue-600 rounded-sm" /> 
@@ -793,8 +793,8 @@ export default function App() {
                 </li>
                 
                 <li className="pt-4 flex gap-4">
-                  <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"><Github size={20} /></a>
-                  <a href="#" className="p-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"><Globe size={20} /></a>
+                  <a href="#" className="p-2 bg-white/5 rounded-lg border border-white/10 hover:bg-[#7C5CFF]/10 hover:border-[#7C5CFF]/30 hover:text-[#9B87FF] transition-all""><Github size={20} /></a>
+                  <a href="#" className="p-2 bg-white/5 rounded-lg border border-white/10 hover:bg-[#7C5CFF]/10 hover:border-[#7C5CFF]/30 hover:text-[#9B87FF] transition-all""><Globe size={20} /></a>
                 </li>
               </ul>
             </div>
