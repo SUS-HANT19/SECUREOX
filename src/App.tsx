@@ -35,9 +35,9 @@ const Navbar = () => (
         <span className="font-display font-bold text-xl tracking-tight">SecureOX</span>
       </div>
       <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-        <a href="#tools" className="hover:text-teal-400 transition-colors">Tools</a>
-        <a href="#features" className="hover:text-teal-400 transition-colors">Features</a>
-        <a href="#contact" className="hover:text-teal-400 transition-colors">Support</a>
+        <a href="#tools" className="hover:text-[#9B87FF] transition-colors">Tools</a>
+        <a href="#features" className="hover:text-[#9B87FF] transition-colors">Features</a>
+        <a href="#contact" className="hover:text-[#9B87FF] transition-colors">Support</a>
       </div>
       <button className="cyber-button text-sm">
         Enterprise <ArrowRight size={14} />
@@ -587,13 +587,13 @@ export default function App() {
   return (
     <div className="selection:bg-teal-500/30 min-h-screen flex flex-col">
       {/* Navbar with logic to switch views */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#082f49]/80 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#070B17]/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div 
             className="flex items-center gap-2 cursor-pointer group" 
             onClick={() => setView('landing')}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-lg flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
+            <div className="w-8 h-8 bg-gradient-to-br from-[#7C5CFF] to-[#22D3EE] rounded-lg flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
               OX
             </div>
             <span className="font-display font-bold text-xl tracking-tight">SecureOX</span>
@@ -601,12 +601,12 @@ export default function App() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
             <button 
               onClick={() => setView(view === 'landing' ? 'tools' : 'landing')}
-              className="hover:text-teal-400 transition-colors"
+              className="hover:text-[#9B87FF] transition-colors"
             >
               {view === 'landing' ? 'Our Tools' : 'Home'}
             </button>
-            <a href="#features" onClick={(e) => { if (view !== 'landing') { e.preventDefault(); setView('landing'); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); } }} className="hover:text-teal-400 transition-colors">Features</a>
-            <a href="#contact" className="hover:text-teal-400 transition-colors">Support</a>
+            <a href="#features" onClick={(e) => { if (view !== 'landing') { e.preventDefault(); setView('landing'); setTimeout(() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }), 100); } }} className="hover:text-[#9B87FF] transition-colors">Features</a>
+            <a href="#contact" className="hover:text-[#9B87FF] transition-colors">Support</a>
           </div>
           
         </div>
@@ -760,7 +760,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div className="space-y-6">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#7C5CFF] to-[#22D3EE] rounded-xl flex items-center justify-center text-white font-bold text-xl">
                   OX
                 </div>
                 <span className="font-display font-bold text-2xl tracking-tight leading-none">SecureOX</span>
