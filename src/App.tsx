@@ -217,10 +217,10 @@ console.log(
 
           {/* Feature list from video */}
           <div className="pt-6 border-t border-white/10 text-[10px] text-gray-500 uppercase tracking-widest grid grid-cols-2 gap-4">
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> AES-256-GCM Encryption</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> PBKDF2 Key Derivation</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> Random Salt Generation</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> Zero-Knowledge Policy</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#9B87FF]" /> AES-256-GCM Encryption</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#9B87FF]" /> PBKDF2 Key Derivation</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#9B87FF]" /> Random Salt Generation</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#9B87FF]" /> Zero-Knowledge Policy</div>
           </div>
         </div>
       </div>
@@ -771,14 +771,14 @@ export default function App() {
             </div>
 
             <div className="space-y-6">
-              <h4 className="font-bold text-[#22D3EE]">Contact Us</h4>
+              <h4 className="font-bold text-[#9B87FF]">Contact Us</h4>
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex gap-3">
-                  <Mail size={18} className="text-[#22D3EE] shrink-0" />
+                  <Mail size={18} className="text-[#9B87FF] shrink-0" />
                   <span>support@secureox.com</span>
                 </li>
                 <li className="flex gap-3">
-                  <MapPin size={18} className="text-[#22D3EE] shrink-0" />
+                  <MapPin size={18} className="text-[#9B87FF] shrink-0" />
                   <span> Pilani Campus, Vidya Vihar, Pilani.<br />  Pin - 333031. Rajasthan, India</span>
                 </li>
               </ul>
@@ -788,7 +788,13 @@ export default function App() {
               <h4 className="font-bold text-[#22D3EE]">Location</h4>
               <ul className="space-y-4 text-sm text-gray-400">
                 <li className="flex items-center gap-3">
-                   <div className="w-6 h-4 bg-blue-600 rounded-sm" /> 
+                   <div className="w-7 h-5 rounded-sm overflow-hidden flex flex-col shadow-sm border border-white/10">
+                   <div className="h-1/3 bg-[#FF9933]" />
+                   <div className="h-1/3 bg-white flex items-center justify-center">
+                   <div className="w-2.5 h-2.5 rounded-full border border-[#000080]" />
+                   </div>
+                   <div className="h-1/3 bg-[#138808]" />
+                </div>
                    <span>India- BITS PILANI</span>
                 </li>
                 
