@@ -177,7 +177,7 @@ console.log(
 
           <button 
             onClick={handleAction}
-            className="w-full py-4 bg-teal-500 hover:bg-teal-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-bold rounded-xl shadow-lg shadow-teal-500/20 active:scale-[0.98]"
+            className="w-full py-4 bg-[#7C5CFF] hover:bg-[#8B73FF] disabled:opacity-50 disabled:cursor-not-allowed transition-all font-bold rounded-xl shadow-lg shadow-[#7C5CFF]/20 active:scale-[0.98]"
             disabled={!inputText || !passphrase}
           >
             {activeTab === 'encrypt' ? 'Encrypt Text' : 'Decrypt Text'}
@@ -202,12 +202,12 @@ console.log(
             >
               <label className="text-sm font-medium text-gray-400 uppercase tracking-wider">Result</label>
               <div className="relative group">
-                <div className="w-full h-24 bg-teal-500/10 border border-teal-500/30 rounded-xl p-4 font-mono text-sm break-all overflow-y-auto">
+                <div className="w-full h-24 bg-[#7C5CFF]/10 border border-[#7C5CFF]/30 rounded-xl p-4 font-mono text-sm break-all overflow-y-auto">
                   {result}
                 </div>
                 <button 
                   onClick={copyToClipboard}
-                  className="absolute top-2 right-2 p-2 bg-teal-500 rounded-lg opacity-0 group-hover:opacity-100 transition-all"
+                  className="absolute top-2 right-2 p-2 bg-[#7C5CFF] rounded-lg opacity-0 group-hover:opacity-100 transition-all"
                 >
                   {copied ? <Check size={16} /> : <Copy size={16} />}
                 </button>
@@ -217,10 +217,10 @@ console.log(
 
           {/* Feature list from video */}
           <div className="pt-6 border-t border-white/10 text-[10px] text-gray-500 uppercase tracking-widest grid grid-cols-2 gap-4">
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-teal-500" /> AES-256-GCM Encryption</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-teal-500" /> PBKDF2 Key Derivation</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-teal-500" /> Random Salt Generation</div>
-            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-teal-500" /> Zero-Knowledge Policy</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> AES-256-GCM Encryption</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> PBKDF2 Key Derivation</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> Random Salt Generation</div>
+            <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" /> Zero-Knowledge Policy</div>
           </div>
         </div>
       </div>
