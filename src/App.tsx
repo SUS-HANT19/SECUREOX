@@ -520,7 +520,7 @@ const FileIntegrityTool = () => {
         <button
           onClick={generateHash}
           disabled={!file}
-          className="w-full py-4 bg-teal-500 hover:bg-teal-400 disabled:opacity-50 rounded-xl font-bold"
+          className="w-full py-4 bg-[#7C5CFF] hover:bg-[#8B73FF] disabled:opacity-50 rounded-xl font-bold"
         >
           Generate SHA-256 Hash
         </button>
@@ -550,7 +550,7 @@ const FileIntegrityTool = () => {
             <button
               onClick={verifyHash}
               disabled={!expectedHash}
-              className="w-full py-4 bg-white/10 hover:bg-white/20 rounded-xl font-bold"
+             className="w-full py-4 bg-[#22D3EE]/10 hover:bg-[#22D3EE]/20 border border-[#22D3EE]/30 text-[#67E8F9] rounded-xl font-bold transition-all"
             >
               Verify File Integrity
             </button>
@@ -585,7 +585,7 @@ export default function App() {
   }, [view]);
 
   return (
-    <div className="selection:bg-teal-500/30 min-h-screen flex flex-col">
+    <div className="selection:bg-[#7C5CFF]/30 min-h-screen flex flex-col">
       {/* Navbar with logic to switch views */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#070B17]/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -630,9 +630,9 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm"
                   >
-                    <Shield size={20} className="text-teal-400" />
+                    <Shield size={20} className="text-[#22D3EE]" />
                     <span className="text-sm font-medium tracking-tight">Active Defense Enabled</span>
-                    <div className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-[#22D3EE] animate-pulse" />
                   </motion.div>
 
                   <div className="space-y-6">
@@ -678,7 +678,7 @@ export default function App() {
               </section>
 
               {/* Features Grid */}
-              <section id="features" className="py-20 bg-black/20">
+              <section id="features" className="py-20 bg-[#050812]/30">
                 <div className="max-w-7xl mx-auto px-4">
                   <div className="text-center mb-16 space-y-4">
                     <h2 className="font-display font-bold text-4xl">Why Choose SecureOX?</h2>
@@ -715,7 +715,7 @@ export default function App() {
                   {/* Guarantees Box */}
                   <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="cyber-card p-6 flex flex-col gap-2">
-                      <h4 className="font-bold flex items-center gap-2 text-teal-400"><Check size={20} /> Security Guarantees</h4>
+                      <h4 className="font-bold flex items-center gap-2 text-[#22D3EE]"><Check size={20} /> Security Guarantees</h4>
                       <ul className="text-sm text-gray-400 space-y-2 pl-7">
                         <li>End-to-end encryption for all operations</li>
                         <li>GDPR and SOC-2 compliant infrastructure</li>
