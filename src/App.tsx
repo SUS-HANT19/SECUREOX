@@ -315,11 +315,11 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
      }}
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
-              activeTab === 'embed' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
+              activeTab === 'embed' ? "text-[#9B87FF]" : "text-gray-500 hover:text-gray-300"
             )}
           >
             Embed Text
-            {activeTab === 'embed' && <motion.div layoutId="stego-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-400" />}
+            {activeTab === 'embed' && <motion.div layoutId="stego-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7C5CFF]" />}
           </button>
           <button 
            onClick={() => {
@@ -332,11 +332,11 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
             
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
-              activeTab === 'extract' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
+              activeTab === 'extract' ? "text-[#9B87FF]" : "text-gray-500 hover:text-gray-300"
             )}
           >
             Extract Text
-            {activeTab === 'extract' && <motion.div layoutId="stego-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-400" />}
+            {activeTab === 'extract' && <motion.div layoutId="stego-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7C5CFF]" />}
           </button>
         </div>
 
@@ -347,7 +347,7 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
               onClick={() => fileInputRef.current?.click()}
               className={cn(
                 "w-full h-64 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-white/5",
-                image ? "border-teal-500" : "border-white/10"
+               image ? "border-[#22D3EE]" : "border-white/10"
               )}
             >
               {image ? (
@@ -359,8 +359,8 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
                 </div>
               ) : (
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-teal-500/10 rounded-full flex items-center justify-center mx-auto">
-                    <CloudUpload className="text-teal-400" size={32} />
+                  <div className="w-16 h-16 bg-[#22D3EE]/10 rounded-full flex items-center justify-center mx-auto">
+                    <CloudUpload className="text-[#22D3EE]" size={32} />
                   </div>
                   <div className="space-y-1">
                     <p className="font-bold">Click to upload an image</p>
@@ -392,14 +392,14 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
               <button
                 onClick={handleEmbed}
                 disabled={loading || !image || !message}
-                className="w-full py-4 bg-teal-500 hover:bg-teal-400 transition-all font-bold rounded-xl shadow-lg shadow-teal-500/20 active:scale-[0.98] flex items-center justify-center gap-2"
+                className="w-full py-4 bg-[#7C5CFF] hover:bg-[#8B73FF] transition-all font-bold rounded-xl shadow-lg shadow-[#7C5CFF]/20 active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 {loading ? 'Processing...' : <><Lock size={18} /> Embed Text in Image</>}
               </button>
 
               {resultImage && (
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 p-4 bg-teal-500/5 rounded-xl border border-teal-500/20">
-                  <p className="text-sm font-bold text-teal-400 flex items-center gap-2"><Check size={16} /> Embed successful!</p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 p-4 bg-[#22D3EE]/5 rounded-xl border border-[#22D3EE]/20">
+                  <p className="text-sm font-bold text-[#22D3EE] flex items-center gap-2"><Check size={16} /> Embed successful!</p>
                   <div className="relative aspect-video bg-black/20 rounded-lg overflow-hidden">
                     <img src={resultImage} className="w-full h-full object-contain" alt="Result" />
                   </div>
@@ -418,7 +418,7 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
               <button
                 onClick={handleExtract}
                 disabled={loading || !image}
-                className="w-full py-4 bg-teal-500 hover:bg-teal-400 transition-all font-bold rounded-xl shadow-lg shadow-teal-500/20 active:scale-[0.98] flex items-center justify-center gap-2"
+                className="w-full py-4 bg-[#7C5CFF] hover:bg-[#8B73FF] transition-all font-bold rounded-xl shadow-lg shadow-[#7C5CFF]/20 active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 {loading ? 'Processing...' : <><Search size={18} /> Extract Hidden Text</>}
               </button>
@@ -435,7 +435,7 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
           )}
 
           <div className="pt-6 border-t border-white/10 space-y-4">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-teal-400">How It Works:</h4>
+             <h4 className="text-xs font-bold uppercase tracking-widest text-[#22D3EE]">How It Works:</h4>
              <ul className="text-xs text-gray-500 space-y-2 list-disc pl-4">
                 <li>Text is hidden in the least significant bits of image pixels</li>
                 <li>Changes are imperceptible to the human eye</li>
