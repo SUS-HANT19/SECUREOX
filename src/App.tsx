@@ -54,7 +54,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay = 0 }: any) => (
     viewport={{ once: true }}
     className="cyber-card p-6 flex flex-col gap-4 hover:bg-white/15 cursor-default"
   >
-    <div className="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-teal-400 border border-teal-500/30">
+   <div className="w-12 h-12 rounded-xl bg-[#7C5CFF]/15 flex items-center justify-center text-[#9B87FF] border border-[#7C5CFF]/30">
       <Icon size={24} />
     </div>
     <h3 className="font-display font-bold text-lg">{title}</h3>
@@ -120,11 +120,11 @@ console.log(
             }}
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
-              activeTab === 'encrypt' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
+              activeTab === 'encrypt' ? "text-[#9B87FF]" : "text-gray-500 hover:text-gray-300"
             )}
           >
             Encrypt
-            {activeTab === 'encrypt' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-400" />}
+            {activeTab === 'encrypt' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7C5CFF]" />}
           </button>
           <button 
          onClick={() => { 
@@ -135,11 +135,11 @@ console.log(
              }}
             className={cn(
               "flex-1 py-4 font-medium transition-all relative",
-              activeTab === 'decrypt' ? "text-teal-400" : "text-gray-500 hover:text-gray-300"
+              activeTab === 'decrypt' ? "text-[#9B87FF]" : "text-gray-500 hover:text-gray-300"
             )}
           >
             Decrypt
-            {activeTab === 'decrypt' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-400" />}
+            {activeTab === 'decrypt' && <motion.div layoutId="tab-underline" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#7C5CFF]" />}
           </button>
         </div>
 
@@ -152,7 +152,7 @@ console.log(
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder={`Enter text to ${activeTab}...`}
-              className="w-full h-32 bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-teal-500/50 transition-all resize-none"
+              className="w-full h-32 bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-teal-[#7C5CFF]/50 transition-all resize-none"
             />
           </div>
 
@@ -164,11 +164,11 @@ console.log(
                 value={passphrase}
                 onChange={(e) => setPassphrase(e.target.value)}
                 placeholder="Enter a strong passphrase..."
-                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 pr-12 focus:outline-none focus:ring-2 focus:ring-teal-500/50 transition-all"
+                className="w-full bg-white/5 border border-white/10 rounded-xl p-4 pr-12 focus:outline-none focus:ring-2 focus:ring-[#7C5CFF]/50 transition-all"
               />
               <button 
                 onClick={() => setShowPassphrase(!showPassphrase)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-teal-400 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#22D3EE] transition-colors"
               >
                 {showPassphrase ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -386,7 +386,7 @@ console.log(`Extraction took ${(end - start).toFixed(2)} ms`);
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Enter the secret text to hide..."
-                  className="w-full h-24 bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-teal-500/50 transition-all resize-none"
+                  className="w-full h-24 bg-white/5 border border-white/10 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-[#7C5CFF]/50 transition-all resize-none"
                 />
               </div>
               <button
